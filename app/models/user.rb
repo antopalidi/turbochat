@@ -3,4 +3,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, length: { maximum: 255 }, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+
+  has_many :rooms, dependent: :destroy
 end
