@@ -18,9 +18,12 @@
           <div class="card-body" id="chat-container"
                >
             <%= turbo_stream_from @room, id: 'turbo-stream-tag' %>
-            <%= turbo_frame_tag :messages do %>
-              <%= render partial: 'messages/message', collection: @messages, locals: { user: current_user } %>
-            <% end %>
+            <%= turbo_stream_from [current_user, @room] %>
+
+              <div id="room_<%=  @room.id %>_messages">
+                <%= render partial: 'messages/message', collection: @messages,
+                           locals: { user: current_user } %>
+              </div>
           </div>
           <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
             <div class="input-group mb-0">

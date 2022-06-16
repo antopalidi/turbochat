@@ -2,8 +2,12 @@
   <div class="d-flex justify-content-between">
     <p class="small mb-1"><%= message.user.email %></p>
     <div class="d-flex justify-content-between">
-      <p class="small mb-1 text-muted me-2"><%= l(message.created_at, format: :short) %></p>
-      <p class="small mb-1"><%= likes(message, user) %></p>
+      <p class="small mb-1 text-muted me-3"><%= l(message.created_at, format: :short) %></p>
+      <p class="small mb-1">
+        <%= link_to like_message_path(message), data: {'turbo-method': :post} do %>
+          <%= render partial: 'messages/heart', locals: { user: user, message: message } %>
+          <%= render partial: 'messages/likes_count', locals: { message: message } %>
+        <% end %>
     </div>
   </div>
   <div class="d-flex flex-row justify-content-start">

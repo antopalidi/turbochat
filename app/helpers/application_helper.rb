@@ -16,15 +16,15 @@ module ApplicationHelper
     nil
   end
 
-  def likes(message, user)
-    heart =
-      if message.likes.find_by(user: user).present?
-        '♥'
-      else
-        '♡'
-      end
-    heart << "#{message.likes_count}" if message.likes_count.positive?
+  def likes_count(message)
+    "#{message.likes_count}" if message.likes_count.positive?
+  end
 
-    heart
+  def heart(message, user)
+    if message.likes.find_by(user: user).present?
+      '♥️'
+    else
+      '🤍️'
+    end
   end
 end
