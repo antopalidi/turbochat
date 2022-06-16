@@ -5,4 +5,5 @@ class User < ApplicationRecord
   validates :email, length: { maximum: 255 }, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_many :rooms, dependent: :destroy
+  has_many :messages, dependent: :destroy
 end
