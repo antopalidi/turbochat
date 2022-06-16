@@ -1,3 +1,4 @@
-<li><b>Room #<%= room.id %></b> — <%= link_to 'Join', room %></li>
-<%= link_to "Room #{room.id}", room_path(room),
-            target: '_blank', rel: 'noopener noreferrer' %>
+<li><b>
+  <%= link_to "Room №#{room.title}", room_path(room.title),
+              target: '_blank', rel: 'noopener noreferrer', class: 'text-secondary' %>
+</b>

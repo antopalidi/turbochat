@@ -6,5 +6,5 @@ class Message < ApplicationRecord
 
   scope :sorted, -> { order(:id) }
 
-  validates :body, presence: true, max_length: 255
+  validates :body, presence: true, length: { maximum: 255 }
 end

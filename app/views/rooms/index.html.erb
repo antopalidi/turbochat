@@ -1,11 +1,16 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%#= notice %></p>-->
 
 <h1>Rooms</h1>
 
-<!--<ul class="mt-4 list-unstyled">-->
-  <%#= render @rooms %>
-<!--</ul>-->
+<ul class="mt-4 list-unstyled">
+  <%= turbo_stream_from :rooms %>
+  <%= turbo_frame_tag :rooms do %>
+    <%= render @rooms %>
+  <% end %>
+</ul>
 
-<!--<div class="mt-2">-->
-  <%#= render 'rooms/form', room: @room %>
-<!--</div>-->
+<% if user_signed_in? %>
+  <div class="mt-2">
+    <%= render 'rooms/form', new_room: @new_room %>
+  </div>
+<% end %>
