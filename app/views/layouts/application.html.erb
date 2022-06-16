@@ -11,6 +11,11 @@
   </head>
 
   <body>
-    <%= yield %>
+  <main class="flex-shrink-0">
+    <div class="container">
+      <%= flash_message %>
+      <%= yield %>
+    </div>
+  </main>
   </body>
 </html>
