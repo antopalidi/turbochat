@@ -10,7 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
   <%= render 'partials/navbar' %>
   <main class="flex-shrink-0">
     <div class="container">
@@ -18,5 +18,10 @@
       <%= yield %>
     </div>
   </main>
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span>&copy; Anna Topalidi,  </span><span><%= Time.now.year %></span>
+    </div>
+  </footer>
   </body>
 </html>

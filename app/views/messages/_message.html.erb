@@ -1,9 +1,9 @@
-<div class="d-flex flex-column">
+<div class="message-line d-flex flex-column">
   <div class="d-flex justify-content-between">
     <p class="small mb-1"><%= message.user.email %></p>
     <div class="d-flex justify-content-between">
       <p class="small mb-1 text-muted me-2"><%= l(message.created_at, format: :short) %></p>
-      <p class="small mb-1"><%= likes(message) %></p>
+      <p class="small mb-1"><%= likes(message, user) %></p>
     </div>
   </div>
   <div class="d-flex flex-row justify-content-start">
