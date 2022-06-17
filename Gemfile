@@ -16,6 +16,7 @@ gem "bootsnap", require: false
 
 gem 'bootstrap', '~> 5.1.3'
 gem 'sassc-rails'
+gem 'bootstrap-icons-helper'
 
 gem "devise", "~> 4.8"
 

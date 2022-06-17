@@ -17,14 +17,14 @@ module ApplicationHelper
   end
 
   def likes_count(message)
-    "#{message.likes_count}" if message.likes_count.positive?
+    "#{message.likes_count}"
   end
 
   def heart(message, user)
     if message.likes.find_by(user: user).present?
-      '♥️'
+      'heart-fill'
     else
-      '🤍️'
+      'heart'
     end
   end
 end

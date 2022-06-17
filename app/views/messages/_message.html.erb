@@ -1,6 +1,6 @@
 <div class="message-line d-flex flex-column">
   <div class="d-flex justify-content-between">
-    <p class="small mb-1"><%= message.user.email %></p>
+    <p class="small mb-1 text-success"><%= message.user.email %></p>
     <div class="d-flex justify-content-between">
       <p class="small mb-1 text-muted me-3"><%= l(message.created_at, format: :short) %></p>
       <p class="small mb-1">
@@ -11,8 +11,8 @@
     </div>
   </div>
   <div class="d-flex flex-row justify-content-start">
-    <div>
-      <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;"><%= message.body %></p>
+    <div class="w-100">
+      <p class="small p-2 mb-3 rounded-3 w-100" style="background-color: #f5f6f7;"><%= message.body %></p>
     </div>
   </div>
 </div>
